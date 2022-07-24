@@ -5,17 +5,9 @@ public class Main {
         Calculator calc = Calculator.instance.get();
         int a = calc.plus.apply(1, 2);
         int b = calc.minus.apply(1, 1);
+        int c = calc.devide.apply(a, b); // Деление на 0 невозможно.
 
-        int i = calc.abs.apply(a);
-        System.out.println(i);
-        int j = calc.abs.apply(b);
-        System.out.println(j);
-        try {
-            int c = calc.devide.apply(i, j);
-            calc.println.accept(c);
-        } catch (ArithmeticException e) {
-            System.out.println(e.getMessage());
-        }
+        calc.println.accept(c);
     }
 }
 
